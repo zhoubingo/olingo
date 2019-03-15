@@ -1,0 +1,53 @@
+<mvc:View
+	controllerName="com.penninkhof.odata.controller.Main"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:mic="sap.suite.ui.microchart">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<!-- <List headerText="Products" id='list'>
+					</List> -->
+					<List
+						headerText="Products"
+						items="{
+							path: '/Companys'
+						}" >
+						<CustomListItem>
+							<HBox justifyContent="SpaceBetween" alignItems="Center" >										
+								<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+									<Text text="{Name}"/>
+									<Label text="{Address}"/>
+								</VBox>
+								<FlexBox width="20rem" height="10rem" alignItems="left" justifyContent="SpaceBetween">
+									<List items="{
+										path: 'PersonDetails'
+									}" >
+										<items>
+											<StandardListItem
+												title="{Name}" 
+												info="{Status}"/>
+										</items>
+									
+									</List>																		
+								</FlexBox>
+							</HBox>
+						</CustomListItem>
+					</List>
+					
+				</content>
+
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button text="{i18n>add}" press="onAddPressed" />
+					</Toolbar>
+				</footer>
+
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
